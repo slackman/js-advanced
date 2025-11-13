@@ -6,3 +6,4 @@ const arr = [
 
 const uniqueIds = new Set(arr.map((user) => user.id));
 const uniqueEls = [...uniqueIds].map((id) => arr.find((el) => el.id === id));
+
