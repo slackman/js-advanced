@@ -19,13 +19,24 @@ Orc.prototype.hit = function () {
     console.log(`Удар`);
 };
 
-Orc.prototype.spell = function () {
-    console.log(`Кастую заклинание`);
+function Elf(race, name, language) {
+    Person.call(this, race, name, language);
+}
+
+Elf.prototype.createSpell = function (typeSpell) {
+    this.typeSpell = typeSpell;
+};
+
+Elf.prototype.spell = function () {
+    console.log(`Кастую заклинание ${this.typeSpell}`);
 };
 
 const orc = new Orc('orc', 'Vasya', 'Russian', 'Дубина');
+const elf = new Elf('elf', 'Toni', 'Spanish');
 
 orc.say();
 orc.hit();
-orc.spell();
+elf.createSpell('Фаерболт');
+elf.spell();
 console.log(orc.weapon);
+console.log(elf.typeSpell);
