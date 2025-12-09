@@ -13,37 +13,43 @@
 */
 
 class User {
-    #user;
-    #pass;
-    constructor(user, pass) {
-        this.#user = user;
-        this.#pass = this.#reversePass(pass);
-        // console.log(this.#pass)
+    #login;
+    #_password;
+    constructor(login, password) {
+        this.#login = login;
+        this.#password = password;
+    }
+
+    set #password(pass) {
+        this.#_password = pass.split('').reverse().join('');
+    }
+
+    get #password() {
+        return this.#_password.split('').reverse().join('');
+    }
+
+    get login() {
+        return this.#login;
     }
 
     checkPassword(pass) {
-        // console.log(pass);
-        // console.log(this.#reversePass(this.#pass))
-        return pass === this.#reversePass(this.#pass)
+        return this.#password === pass;
     }
 
     changePassword(oldPass, newPass) {
-        // console.log(checkResult)
-        if (this.checkPassword(oldPass)) {
-            this.#pass = this.#reversePass(newPass);
-            console.log('Пароль успешно изменен');
-            // console.log(this.#pass)
-        } else {
-            console.log(
-                'Пароли совпадают, необходимо ввести пароль, отличающийся от предыдущего'
-            );
+        if (!this.checkPassword(oldPass)) {
+            return false;
         }
-    }
-
-    #reversePass(pass) {
-        return pass.split('').reverse().join('');
+        this.#password = newPass;
+        return true;
     }
 }
 
-const tom = new User('Tom', '123');
-tom.changePassword('123', '123');
+const user = new User('a@a.ru', '123');
+console.log(user);
+console.log(user.login);
+// user.login = 'asa@asas.ru';
+console.log(user.checkPassword('234'));
+console.log(user.checkPassword('123'));
+user.changePassword('123', '234');
+console.log(user);
