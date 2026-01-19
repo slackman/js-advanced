@@ -1,0 +1,7 @@
+'use strict';
+
+const res = fetch('https://dummyjson.com/products/1')
+    .then((response) => response.json())
+    .then((data) => data);
+
+console.log(res);
