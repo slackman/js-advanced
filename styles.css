@@ -1,0 +1,52 @@
+.button {
+    color: white;
+    border: 1px solid #333;
+    background: none;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.wrapper {
+    display: flex;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #333;
+    border-radius: 10px;
+}
+
+.wrapper > div {
+    padding: 20px;
+    border: 1px solid #333;
+    border-radius: 10px;
+}
+
+.item {
+  border: 1px solid white;
+  padding: 8px;
+  margin: 6px 0;
+}
+
+/* .backlight {
+    background-color: aquamarine;
+} */
+
+.yellow {
+    background: yellow;
+    color: #333;
+}
+
+body {
+    text-align: center;
+}
+
+.counter {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 12px;
+}
