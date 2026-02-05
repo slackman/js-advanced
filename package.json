@@ -1,0 +1,33 @@
+{
+  "name": "book-app",
+  "version": "1.0.0",
+  "description": "Cool book app",
+  "keywords": [
+    "books"
+  ],
+  "homepage": "https://github.com/slackman/js-advanced#readme",
+  "bugs": {
+    "url": "https://github.com/slackman/js-advanced/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slackman/js-advanced.git"
+  },
+  "license": "ISC",
+  "author": "Nikita Malyutin",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "build": "rollup 16-modules/dz/index.js --file bundle.js --format esm",
+    "start": "live-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "axios": "^1.13.4"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.0",
+    "rollup": "^4.57.1"
+  },
+  "peerDependenciesMeta": {}
+}
