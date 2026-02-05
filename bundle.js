@@ -1,32 +1,22 @@
-(function () {
-    'use strict';
+class Task {
+    constructor(message) {
+        this.message = message;
+    }
+    run() {
+        console.log(this.message);
+    }
+}
 
-    function add(f, s) {
-        return f + s;
+class User {
+    constructor(task) {
+        this.task = task;
     }
 
-    function sub(f, s) {
-        return f - s;
+    do() {
+        this.task.run();
     }
+}
 
-    const a$1 = 1;
-    console.log(a$1);
-    // async function getProducts() {
-    //     const res = await fetch('https://dummyjson.com/products');
-    //     return res.json()
-    // }
-
-    // export const res = await getProducts();
-
-    // setTimeout(() => {
-    //     add = function (s, f) {
-    //         return f * s;
-    //     };
-    // }, 1500);
-
-    const a = 2;
-    console.log(sub(1, 3));
-    console.log(add(1, 3));
-    console.log(a);
-
-})();
+const task = new Task('Task 1');
+const user = new User(task);
+user.do();
