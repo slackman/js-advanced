@@ -18,16 +18,19 @@
   "type": "module",
   "main": "app.js",
   "scripts": {
-    "build": "rollup 16-modules/dz/index.js --file bundle.js --format esm",
     "start": "live-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "axios": "^1.13.4"
+    "build": "rollup -c --watch",
+    "type": "module"
   },
   "devDependencies": {
-    "live-server": "^1.2.0",
-    "rollup": "^4.57.1"
+    "@eslint/js": "^9.39.2",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "eslint": "^9.39.2",
+    "globals": "^17.3.0",
+    "rollup": "^4.57.1",
+    "rollup-plugin-import-css": "^4.2.0"
   },
-  "peerDependenciesMeta": {}
+  "dependencies": {
+    "on-change": "^6.0.2"
+  }
 }
